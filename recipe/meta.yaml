@@ -1,5 +1,5 @@
 {% set name = "pytest-echo" %}
-{% set version = "1.8.1" %}
+{% set version = "2.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 7d765b4ddac93468fa1d303e70c48ad9e38479b4d122d5ae019919bb7fed0c2a
+  sha256: 55a976c314321fcd815e03cccc0027251ade702e34e9ab3ac3afc42d9ab7160c
 
 build:
   number: 0
