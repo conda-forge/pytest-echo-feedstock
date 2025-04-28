@@ -1,5 +1,5 @@
 {% set name = "pytest-echo" %}
-{% set version = "1.8.1" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 7d765b4ddac93468fa1d303e70c48ad9e38479b4d122d5ae019919bb7fed0c2a
+  sha256: 5f5769af610fdace9f4a7c98773b469865d78149822d29c4b66fbdb39074364b
 
 build:
   number: 0
@@ -18,11 +18,14 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
+    - hatch-vcs >=0.4
+    - hatchling >=1.25
     - pip
   run:
-    - pytest >=2.2
     - python >={{ python_min }}
+    - pytest >=8.3.3
+    # remove when py>=311
+    - tomli >=2.0.1
 
 test:
   imports:
