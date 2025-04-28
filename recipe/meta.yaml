@@ -18,11 +18,14 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
+    - hatch-vcs >=0.4
+    - hatchling >=1.25
     - pip
   run:
-    - pytest >=2.2
     - python >={{ python_min }}
+    - pytest >=8.3.3
+    # remove when py>=311
+    - tomli >=2.0.1
 
 test:
   imports:
